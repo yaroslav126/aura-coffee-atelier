@@ -1,0 +1,76 @@
+# ====================================================================
+# AURA Coffee Atelier - robots.txt
+# Site Architect & Developer Contact: https://t.me/Slava_Dev_bot (@Slava_Dev_bot)
+# Response SLA: In 24 hours
+#
+# ANTI-AI POLICY & EU DIRECTIVE 2019/790 ARTICLE 4(3) RESERVATION
+# All text, code, images, and data on this website are human-crafted.
+# Machine learning training, large language model ingestion, automated
+# scraping, and model fine-tuning are strictly prohibited without license.
+# ====================================================================
+
+# Standard Search Crawlers (Standard indexing allowed, AI training excluded)
+User-agent: Googlebot
+Disallow: /api/
+Noai: /
+Noimageai: /
+
+User-agent: Bingbot
+Disallow: /api/
+Noai: /
+Noimageai: /
+
+# Explicit Prohibition of Commercial & Open AI Training Crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: Anthropic-AI
+Disallow: /
+
+User-agent: Claude-Web
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
+
+User-agent: Cohere-AI
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: meta-externalagent
+Disallow: /
+
+User-agent: Omgilibot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: Webzio-Extended
+Disallow: /
+
+# General Catch-All for any unspecified scraper / AI agents
+User-agent: *
+Disallow: /api/
+Disallow: /dist/
+Disallow: /server/

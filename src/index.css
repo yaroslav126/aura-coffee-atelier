@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-obsidian-950 text-parchment-100 font-sans antialiased;
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(217, 142, 58, 0.12), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 40%, rgba(68, 50, 36, 0.15), transparent);
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  /* Headings globally use Outfit (the same font as "Craft Your Cup") */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Outfit", "Plus Jakarta Sans", system-ui, sans-serif;
+    overflow-wrap: break-word;
+  }
+
+  /* Adaptive text handling for diverse platforms */
+  p, span, button, a, label, input, textarea, select {
+    overflow-wrap: break-word;
+  }
+}
+
+/* Custom smooth scrollbar in warm roasted coffee tones */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #110B07;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #38281C;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D98E3A;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-none {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
