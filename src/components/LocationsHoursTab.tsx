@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Clock, Sparkles, CheckCircle2, AlertCircle, Send, ShieldAlert, Calendar, Coffee, Award, Users, Wifi, HeartHandshake } from 'lucide-react';
+import { Clock, Sparkles, CheckCircle2, AlertCircle, Send, Calendar, Coffee, Award, Users, Wifi, HeartHandshake } from 'lucide-react';
 import { LOCATIONS } from '../data/coffeeData';
 import { submitReservation } from '../services/apiClient';
 
@@ -164,9 +164,6 @@ export const LocationsHoursTab: React.FC = () => {
                     <span className="text-crema-400 font-sans font-semibold text-[11px] sm:text-xs flex items-center gap-1.5">
                       <Send className="w-3.5 h-3.5 text-sky-400" />
                       <span>Direct Contact & Work</span>
-                    </span>
-                    <span className="text-[9px] font-sans px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 flex items-center gap-1">
-                      <ShieldAlert className="w-2.5 h-2.5 text-amber-400" /> Anti-AI
                     </span>
                   </div>
                   <div className="space-y-1.5 text-[11px] sm:text-xs">
@@ -400,10 +397,6 @@ export const LocationsHoursTab: React.FC = () => {
                   <Send className="w-3.5 h-3.5 text-sky-400 shrink-0" />
                   <span>Telegram Bot: @Slava_Dev_bot</span>
                 </a>
-                <span className="inline-flex items-center gap-1 text-[10px] text-amber-300/90 font-sans">
-                  <ShieldAlert className="w-3 h-3 text-amber-400 shrink-0" />
-                  <span>Anti-AI Protected • No Scrape</span>
-                </span>
               </div>
             </div>
 

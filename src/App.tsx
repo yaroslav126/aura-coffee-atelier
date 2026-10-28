@@ -8,7 +8,7 @@ import { LocationsHoursTab } from './components/LocationsHoursTab';
 import { OurStoryTab } from './components/OurStoryTab';
 import { OrderDrawer } from './components/OrderDrawer';
 import { TabType, CartItem, DrinkBase } from './types';
-import { Coffee, Send, Clock, ShieldAlert } from 'lucide-react';
+import { Coffee, Send, Clock } from 'lucide-react';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<TabType>('customizer');
@@ -183,14 +183,6 @@ export const App: React.FC = () => {
                     <Clock className="w-3 h-3" /> Answering client messages in 24 hours
                   </span>
                 </div>
-
-                {/* Visible Anti-AI Mark */}
-                <div className="pt-1">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-obsidian-950 border border-amber-500/30 text-[11px] font-sans text-amber-300/90 shadow-sm font-medium">
-                    <ShieldAlert className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                    <span>Anti-AI Protected • No Model Training</span>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -209,10 +201,6 @@ export const App: React.FC = () => {
               </a>
               <span>•</span>
               <span className="text-emerald-400 font-medium">Response: in 24 hours</span>
-              <span>•</span>
-              <span className="text-amber-400/90 inline-flex items-center gap-1 font-medium">
-                <ShieldAlert className="w-3 h-3 text-amber-400" /> Anti-AI Protected
-              </span>
             </div>
           </div>
         </div>

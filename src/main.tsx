@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
   });
 
   console.log(
-    '%c☕ AURA Coffee Atelier %c Site created by: @Slava_Dev_bot (Telegram) | Replies in 24 hours | 🛡️ Anti-AI Protected ',
+    '%c☕ AURA Coffee Atelier %c Site created by: @Slava_Dev_bot (Telegram) | Replies in 24 hours',
     'background: #D98E3A; color: #110B07; font-weight: bold; padding: 3px 6px; border-radius: 4px;',
     'background: #1A120C; color: #FDFBF7; padding: 3px 6px; border: 1px solid #382417; border-radius: 4px;'
   );
