@@ -21,25 +21,25 @@
       font-family: "Times New Roman", Times, serif !important;
     }
     .dev-demo-banner-bar {
-      background: rgba(15, 23, 42, 0.94);
+      background: rgba(15, 23, 42, 0.96);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
       color: #f8fafc;
-      padding: 10px 16px;
+      padding: 5px 16px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      font-size: 14px;
-      line-height: 1.45;
+      font-size: 12.5px;
+      line-height: 1.35;
       font-family: "Times New Roman", Times, serif !important;
     }
     .dev-demo-banner-content {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
       flex: 1;
       min-width: 0;
       font-family: "Times New Roman", Times, serif !important;
@@ -47,17 +47,16 @@
     .dev-demo-banner-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      background: rgba(234, 179, 8, 0.18);
-      border: 1px solid rgba(234, 179, 8, 0.45);
       color: #fde047;
       font-family: "Times New Roman", Times, serif !important;
       font-weight: 700;
-      font-size: 12px;
+      font-size: 13px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      padding: 3px 8px;
-      border-radius: 6px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
       white-space: nowrap;
       flex-shrink: 0;
     }
@@ -66,7 +65,8 @@
       overflow: hidden;
       text-overflow: ellipsis;
       font-family: "Times New Roman", Times, serif !important;
-      font-size: 14px;
+      font-size: 12.5px;
+      line-height: 1.35;
     }
     .dev-demo-banner-text strong {
       color: #ffffff;
@@ -89,14 +89,14 @@
     .dev-demo-banner-btn-tg {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
       background: #0284c7;
       color: #ffffff !important;
       text-decoration: none !important;
       font-family: "Times New Roman", Times, serif !important;
-      font-weight: 600;
-      font-size: 13px;
-      padding: 6px 12px;
+      font-weight: 700;
+      font-size: 12px;
+      padding: 4px 10px;
       border-radius: 6px;
       transition: background 0.2s ease, transform 0.1s ease;
       white-space: nowrap;
@@ -110,13 +110,13 @@
       border: 1px solid rgba(255, 255, 255, 0.12);
       color: #94a3b8;
       cursor: pointer;
-      width: 26px;
-      height: 26px;
-      border-radius: 6px;
+      width: 22px;
+      height: 22px;
+      border-radius: 5px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 13px;
       line-height: 1;
       padding: 0;
       transition: all 0.2s ease;
