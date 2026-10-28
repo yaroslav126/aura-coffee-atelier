@@ -57,10 +57,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-md border-b border-obsidian-800/80 transition-all select-none">
-      <div className="w-full relative pl-0 pr-3 sm:pr-5 lg:pr-8">
+      <div className="w-full relative pl-1.5 sm:pl-2 pr-3 sm:pr-5 lg:pr-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20 relative">
           
-          {/* 1. Left Corner Logo Cup - Placed at the very left corner without a gap & without borders */}
+          {/* 1. Left Corner Logo Cup - Placed with a very small, refined gap from the border without container borders */}
           <div 
             onClick={() => {
               setActiveTab('customizer');
@@ -68,7 +68,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             }}
             onMouseEnter={handleLogoEnter}
             onMouseLeave={handleLogoLeave}
-            className="flex items-center cursor-pointer z-40 py-1 pl-0 pr-1 group"
+            className="flex items-center cursor-pointer z-40 py-1 pr-1 group"
             title="AURA Coffee Atelier - Tap to craft your cup"
           >
             <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-start transition-transform duration-300 ease-out group-hover:scale-110 active:scale-95">
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             animate={
               isLogoHovered
                 ? {
-                    left: '2.5rem',
+                    left: '2.85rem',
                     x: 0,
                   }
                 : {
