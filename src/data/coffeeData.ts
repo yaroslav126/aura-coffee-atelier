@@ -70,7 +70,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: true,
     supportsMilk: false,
     supportsSyrup: false,
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1786431851484-97bdfc0bc704?q=80&w=800&auto=format&fit=crop',
     tags: ['Filter', 'Single-Origin', 'Clean Acidity', 'Zero Sugar'],
     calories: 5,
     caffeineMg: 145
@@ -100,7 +100,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: true,
     supportsMilk: true,
     supportsSyrup: true,
-    image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1643250094739-408e029fb002?q=80&w=800&auto=format&fit=crop',
     tags: ['Cold Brew', '16h Tower', 'High Caffeine', 'Silky'],
     calories: 10,
     caffeineMg: 210
@@ -160,7 +160,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: false,
     supportsMilk: false,
     supportsSyrup: false,
-    image: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1509365465985-25d11c17e812?q=80&w=800&auto=format&fit=crop',
     tags: ['Artisanal Bakery', 'Caramelized', 'Warm Baked Daily'],
     calories: 380,
     caffeineMg: 0
@@ -175,7 +175,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: false,
     supportsMilk: false,
     supportsSyrup: false,
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1764608871512-f8909f6bbbcd?q=80&w=800&auto=format&fit=crop',
     tags: ['Brioche', 'Green Cardamom', 'Nordic Heritage'],
     calories: 340,
     caffeineMg: 0
@@ -190,7 +190,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: true,
     supportsMilk: false,
     supportsSyrup: false,
-    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1750378626737-ec5dbff81980?q=80&w=800&auto=format&fit=crop',
     tags: ['Filter', 'Single-Origin', 'Customer Favorite', 'Zero Sugar'],
     calories: 5,
     caffeineMg: 155
@@ -205,7 +205,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: false,
     supportsMilk: true,
     supportsSyrup: true,
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=800&auto=format&fit=crop',
     tags: ['Filter', 'Single-Origin', 'Zero Sugar'],
     calories: 5,
     caffeineMg: 160
@@ -235,7 +235,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: true,
     supportsMilk: false,
     supportsSyrup: true,
-    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=800&auto=format&fit=crop',
     tags: ['Espresso', 'Plant-Based', 'Zero Sugar', 'Customer Favorite'],
     calories: 40,
     caffeineMg: 145
@@ -250,7 +250,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: true,
     supportsMilk: false,
     supportsSyrup: false,
-    image: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=800&auto=format&fit=crop',
     tags: ['Cold Brew', 'Plant-Based', 'Zero Sugar'],
     calories: 25,
     caffeineMg: 75
@@ -265,7 +265,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: true,
     supportsMilk: true,
     supportsSyrup: true,
-    image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=800&auto=format&fit=crop',
     tags: ['Cold Brew', 'Nitro Tap', 'Customer Favorite'],
     calories: 120,
     caffeineMg: 200
@@ -325,7 +325,7 @@ export const DRINK_BASES: DrinkBase[] = [
     supportsIce: false,
     supportsMilk: false,
     supportsSyrup: false,
-    image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1580555535526-d49b8f40b1ec?q=80&w=800&auto=format&fit=crop',
     tags: ['Artisanal Bakery', 'Warm Baked Daily'],
     calories: 220,
     caffeineMg: 0
