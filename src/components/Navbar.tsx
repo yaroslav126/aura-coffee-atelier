@@ -20,76 +20,133 @@ export const Navbar: React.FC<NavbarProps> = ({
 }) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [isLogoHovered, setIsLogoHovered] = React.useState(false);
+  const hoverTimeoutRef = React.useRef<NodeJS.Timeout | null>(null);
+
+  const handleLogoEnter = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    setIsLogoHovered(true);
+  };
+
+  const handleLogoLeave = () => {
+    if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
+    hoverTimeoutRef.current = setTimeout(() => {
+      setIsLogoHovered(false);
+    }, 140);
+  };
+
+  const handleNameEnter = () => {
+    // Only keep docked if currently docked at the left from hovering the logo
+    if (isLogoHovered && hoverTimeoutRef.current) {
+      clearTimeout(hoverTimeoutRef.current);
+    }
+  };
+
+  const handleNameLeave = () => {
+    if (isLogoHovered) {
+      handleLogoLeave();
+    }
+  };
 
   const navItems: { id: TabType; label: string; icon: React.ReactNode }[] = [
-    { id: 'customizer', label: 'Customizer', icon: <Sparkles className="w-4 h-4" /> },
-    { id: 'menu', label: 'Menu', icon: <Coffee className="w-4 h-4" /> },
-    { id: 'brew-guide', label: 'Brew Guide', icon: <BookOpen className="w-4 h-4" /> },
-    { id: 'locations', label: 'Locations', icon: <MapPin className="w-4 h-4" /> },
-    { id: 'story', label: 'Story', icon: <Compass className="w-4 h-4" /> },
+    { id: 'customizer', label: 'Customizer', icon: <Sparkles className="w-3.5 h-3.5" /> },
+    { id: 'menu', label: 'Menu', icon: <Coffee className="w-3.5 h-3.5" /> },
+    { id: 'brew-guide', label: 'Brew Guide', icon: <BookOpen className="w-3.5 h-3.5" /> },
+    { id: 'locations', label: 'Locations', icon: <MapPin className="w-3.5 h-3.5" /> },
+    { id: 'story', label: 'Story', icon: <Compass className="w-3.5 h-3.5" /> },
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-md border-b border-obsidian-800/80 transition-all">
-      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
-        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
+    <header className="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-md border-b border-obsidian-800/80 transition-all select-none">
+      <div className="w-full relative pl-0 pr-3 sm:pr-5 lg:pr-8">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20 relative">
           
-          {/* Brand Identity - Placed at Left Corner, Independent from Text Column Borders */}
+          {/* 1. Left Corner Logo Cup - Placed at the very left corner without a gap & without borders */}
           <div 
-            onClick={() => setActiveTab('customizer')}
-            onMouseEnter={() => setIsLogoHovered(true)}
-            onMouseLeave={() => setIsLogoHovered(false)}
-            className="flex items-center gap-2.5 sm:gap-3.5 cursor-pointer group shrink-0 select-none"
+            onClick={() => {
+              setActiveTab('customizer');
+              window.scrollTo({ top: 0, behavior: 'instant' });
+            }}
+            onMouseEnter={handleLogoEnter}
+            onMouseLeave={handleLogoLeave}
+            className="flex items-center cursor-pointer z-40 py-1 pl-0 pr-1 group"
+            title="AURA Coffee Atelier - Tap to craft your cup"
           >
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg sm:rounded-xl bg-obsidian-900 border border-obsidian-800/80 p-0.5 shadow-sm transition-all duration-300 ease-out group-hover:border-crema-500/50 group-hover:shadow-[0_0_12px_rgba(217,142,58,0.2)] group-hover:scale-105 transform-gpu [transform:translateZ(0)] [backface-visibility:hidden] shrink-0 flex items-center justify-center overflow-hidden">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 flex items-center justify-start transition-transform duration-300 ease-out group-hover:scale-110 active:scale-95">
               <AnimatedLogoCup isHovered={isLogoHovered} />
-            </div>
-            <div>
-              <span className="font-serif text-base sm:text-xl tracking-wider text-parchment-50 font-bold uppercase transition-colors duration-300 group-hover:text-crema-400">
-                AURA
-              </span>
             </div>
           </div>
 
-          {/* Desktop Navigation Tabs - Centered with Smooth Spring Pill */}
-          <div className="hidden lg:flex flex-1 justify-center px-4">
-            <nav className="flex items-center space-x-0.5 xl:space-x-1 bg-obsidian-900/80 border border-obsidian-800 p-1 xl:p-1.5 rounded-full shadow-inner">
-            {navItems.map((item) => {
-              const isActive = activeTab === item.id;
-              return (
-                <button
-                  key={item.id}
-                  onClick={() => setActiveTab(item.id)}
-                  className={`relative px-2.5 xl:px-4 py-1.5 xl:py-2 text-[11px] xl:text-xs font-medium rounded-full transition-colors flex items-center gap-1 xl:gap-1.5 whitespace-nowrap ${
-                    isActive ? 'text-obsidian-950 font-semibold' : 'text-parchment-200 hover:text-parchment-50'
-                  }`}
-                >
-                  {isActive && (
-                    <motion.div
-                      layoutId="activeTabPill"
-                      className="absolute inset-0 bg-gradient-to-r from-crema-400 to-crema-500 rounded-full shadow-sm"
-                      transition={{ type: 'spring', stiffness: 420, damping: 32 }}
-                    />
-                  )}
-                  <span className="relative z-10 flex items-center gap-1 xl:gap-1.5">
-                    {item.icon}
-                    {item.label}
-                  </span>
-                </button>
-              );
-            })}
-          </nav>
-        </div>
+          {/* 2. Brand Name "AURA" - Centered by default, slides to the logo when hovering logo */}
+          <motion.div
+            onClick={() => {
+              setActiveTab('customizer');
+              window.scrollTo({ top: 0, behavior: 'instant' });
+            }}
+            onMouseEnter={handleNameEnter}
+            onMouseLeave={handleNameLeave}
+            className="absolute z-30 cursor-pointer py-1"
+            initial={false}
+            animate={
+              isLogoHovered
+                ? {
+                    left: '2.5rem',
+                    x: 0,
+                  }
+                : {
+                    left: '50%',
+                    x: '-50%',
+                  }
+            }
+            transition={{
+              type: 'spring',
+              stiffness: 280,
+              damping: 26,
+              mass: 0.85,
+            }}
+          >
+            <span className="font-serif text-base sm:text-xl lg:text-2xl tracking-[0.22em] text-parchment-50 font-bold uppercase transition-colors duration-300 hover:text-crema-400">
+              AURA
+            </span>
+          </motion.div>
 
-          {/* Quick Actions (Cart, Mobile Toggle) */}
-          <div className="flex items-center gap-2 sm:gap-3">
+          {/* 3. Right Cluster: Desktop Nav Tabs + Cart Bag + Mobile Toggle */}
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 z-20">
+            {/* Desktop Navigation Tabs */}
+            <div className="hidden xl:flex items-center">
+              <nav className="flex items-center space-x-0.5 bg-obsidian-900/80 border border-obsidian-800 p-1 rounded-full shadow-inner">
+                {navItems.map((item) => {
+                  const isActive = activeTab === item.id;
+                  return (
+                    <button
+                      key={item.id}
+                      onClick={() => setActiveTab(item.id)}
+                      className={`relative px-2.5 xl:px-3 py-1.5 text-[11px] xl:text-xs font-medium rounded-full transition-colors flex items-center gap-1 xl:gap-1.5 whitespace-nowrap ${
+                        isActive ? 'text-obsidian-950 font-semibold' : 'text-parchment-200 hover:text-parchment-50'
+                      }`}
+                    >
+                      {isActive && (
+                        <motion.div
+                          layoutId="activeTabPill"
+                          className="absolute inset-0 bg-gradient-to-r from-crema-400 to-crema-500 rounded-full shadow-sm"
+                          transition={{ type: 'spring', stiffness: 420, damping: 32 }}
+                        />
+                      )}
+                      <span className="relative z-10 flex items-center gap-1 xl:gap-1.5">
+                        {item.icon}
+                        {item.label}
+                      </span>
+                    </button>
+                  );
+                })}
+              </nav>
+            </div>
 
             {/* Shopping Cart Button with Animated Badge */}
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={onOpenCart}
-              className="relative p-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 border border-obsidian-700/80 text-parchment-100 transition-colors"
+              className="relative p-2.5 rounded-full bg-obsidian-850 hover:bg-obsidian-800 border border-obsidian-700/80 text-parchment-100 transition-colors shadow-sm"
               aria-label="View order bag"
             >
               <ShoppingBag className="w-5 h-5 text-crema-400" />
@@ -106,14 +163,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               )}
             </motion.button>
 
-            {/* Mobile Hamburger Menu Toggle */}
+            {/* Mobile / Tablet Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg bg-obsidian-850 text-parchment-200 hover:text-white"
+              className="xl:hidden p-2 rounded-lg bg-obsidian-850 text-parchment-200 hover:text-white transition-colors"
+              aria-label="Toggle navigation menu"
             >
               {mobileOpen ? <X className="w-5 h-5" /> : <MenuIcon className="w-5 h-5" />}
             </button>
           </div>
+
         </div>
 
         {/* Mobile Navigation Dropdown */}
@@ -122,7 +181,8 @@ export const Navbar: React.FC<NavbarProps> = ({
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden py-4 border-t border-obsidian-800 space-y-1.5"
+            transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+            className="xl:hidden py-4 border-t border-obsidian-800 space-y-1.5"
           >
             {navItems.map((item) => (
               <button

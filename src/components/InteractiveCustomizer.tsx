@@ -127,7 +127,7 @@ export const InteractiveCustomizer: React.FC<InteractiveCustomizerProps> = ({
         
         {/* LEFT COLUMN: The Interactive Animated Cup Visualizer (5 Cols) */}
         <div className="lg:col-span-5 lg:sticky lg:top-24 self-start space-y-4 z-20">
-          <div className="bg-obsidian-900 border border-obsidian-800 rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-soft-float relative overflow-hidden max-h-[calc(100vh-7rem)] overflow-y-auto scrollbar-none">
+          <div className="bg-obsidian-900 border border-obsidian-800 rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-soft-float relative overflow-hidden max-h-[calc(100vh-7rem)] overflow-y-auto overscroll-contain scrollbar-none">
             
             {/* Visualizer Background Glow */}
             <div 

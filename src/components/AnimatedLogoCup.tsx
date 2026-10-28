@@ -106,7 +106,7 @@ export const AnimatedLogoCup: React.FC<AnimatedLogoCupProps> = ({ isHovered = fa
     >
       <svg
         viewBox="0 0 32 32"
-        className="w-5 h-5 sm:w-6 sm:h-6 pointer-events-none select-none"
+        className="w-7 h-7 sm:w-8 sm:h-8 pointer-events-none select-none drop-shadow-[0_2px_8px_rgba(217,142,58,0.25)]"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
