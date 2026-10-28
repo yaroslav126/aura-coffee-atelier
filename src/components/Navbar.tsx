@@ -57,10 +57,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-40 bg-obsidian-950/90 backdrop-blur-md border-b border-obsidian-800/80 transition-all select-none">
-      <div className="w-full relative pl-1.5 sm:pl-2 pr-3 sm:pr-5 lg:pr-8">
+      <div className="w-full relative pl-3 sm:pl-4 pr-3 sm:pr-5 lg:pr-8">
         <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20 relative">
           
-          {/* 1. Left Corner Logo Cup - Placed with a very small, refined gap from the border without container borders */}
+          {/* 1. Left Corner Logo Cup - Placed with an elegant comfortable gap from the border */}
           <div 
             onClick={() => {
               setActiveTab('customizer');
@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             animate={
               isLogoHovered
                 ? {
-                    left: '2.85rem',
+                    left: '2.75rem',
                     x: 0,
                   }
                 : {
